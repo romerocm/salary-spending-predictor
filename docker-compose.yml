@@ -4,4 +4,4 @@ services:
     build: .
     volumes:
       - .:/app
-    command: bash -c "python train_model.py && python predict.py"
+    command: bash -c "python train_model.py && python predict.py && python visualize_results.py"

@@ -46,12 +46,12 @@ model = Pipeline([
 # Dividir los datos en conjunto de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+# Guardar los datos de prueba para la visualización
+X_test.to_csv('data/X_test.csv', index=False)
+y_test.to_csv('data/y_test.csv', index=False)
+
 # Ajustar el modelo
 model.fit(X_train, y_train)
-
-# Evaluar el modelo
-score = model.score(X_test, y_test)
-print(f"R-squared score: {score}")
 
 # Guardar el modelo entrenado
 joblib.dump(model, 'data/modelo_entrenado.joblib')

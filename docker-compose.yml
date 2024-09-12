@@ -1,0 +1,7 @@
+version: '3'
+services:
+  predictor:
+    build: .
+    volumes:
+      - .:/app
+    command: bash -c "python train_model.py && python predict.py"

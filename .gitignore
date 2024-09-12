@@ -1,1 +1,5 @@
 .venv.
+Grupo_02.csv
+Predecir.csv
+datos_entrenamiento.csv
+modelo_entrenado.joblib

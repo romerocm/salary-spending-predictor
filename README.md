@@ -66,7 +66,7 @@ The project generates the following outputs:
 | `data/modelo_entrenado.joblib` | The trained machine learning model |
 | `data/X_test.csv`              | Test set features                  |
 | `data/y_test.csv`              | Test set target variable           |
-| `data/Grupo_02.csv`            | Predictions for the provided data  |
+| `data/Grupo_05.csv`            | Predictions for the provided data  |
 
 ### Visualizations
 

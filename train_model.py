@@ -7,14 +7,18 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 import joblib
 import gdown
+import os
+
+# Asegurarse de que el directorio 'data' existe
+os.makedirs('data', exist_ok=True)
 
 # URL del archivo de entrenamiento en Google Drive (necesitas proporcionar este enlace)
 url = 'https://drive.google.com/file/d/11dqKxwZ3T_ObfqlURBv8RGqbHPWyjxYC/view?usp=sharing'
 file_id = url.split('/')[-2]
-gdown.download(f'https://drive.google.com/uc?id={file_id}', 'datos_entrenamiento.csv', quiet=False)
+gdown.download(f'https://drive.google.com/uc?id={file_id}', 'data/datos_entrenamiento.csv', quiet=False)
 
 # Cargar los datos de entrenamiento
-df = pd.read_csv('datos_entrenamiento.csv')
+df = pd.read_csv('data/datos_entrenamiento.csv')
 
 # Separar variables predictoras y variable objetivo
 X = df.drop(['Spending', 'Index'], axis=1)
@@ -50,6 +54,6 @@ score = model.score(X_test, y_test)
 print(f"R-squared score: {score}")
 
 # Guardar el modelo entrenado
-joblib.dump(model, 'modelo_entrenado.joblib')
+joblib.dump(model, 'data/modelo_entrenado.joblib')
 
-print("Modelo entrenado y guardado como 'modelo_entrenado.joblib'")
+print("Modelo entrenado y guardado como 'data/modelo_entrenado.joblib'")
